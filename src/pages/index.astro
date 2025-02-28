@@ -1,11 +1,58 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import { defineProps } from 'astro';
+defineProps<{ title: string }>();
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自動ツール屋さん</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>自動ツール屋さん</h1>
+        <p>簡単に使える自動化ツールを提供！</p>
+
+        <h2>提供するツール</h2>
+        <p>・整備管理ツール（ローカル版 / GitHub）</p>
+
+        <a href="https://github.com/Uni13x/maintenance-app" class="btn">GitHubでクローン</a>
+
+        <h2>商用利用について</h2>
+        <p>当ツールは個人利用に限り無料でご利用いただけます。</p>
+        <p>商用利用をご希望の方は以下のフォームよりお問い合わせください。</p>
+        <a href="https://your-form-url" class="btn">商用利用のお問い合わせ</a>
+    </div>
+</body>
+</html>
+
